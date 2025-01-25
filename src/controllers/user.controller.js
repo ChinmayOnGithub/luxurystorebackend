@@ -16,7 +16,7 @@ const addNewPost = async (req, res) => {
     try {
       const newData = new DataModel({ vlabel, vlink, postedby });
       await newData.save();
-      res.status(200).json({ message: 'Data added successfully' });
+      res.status(200).json({ message: 'Data added successfully', newData });
     } catch (error) {
       res.status(500).json({ message: 'Error adding data', error });
     }
